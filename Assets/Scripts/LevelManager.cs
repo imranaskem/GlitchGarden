@@ -5,8 +5,12 @@ public class LevelManager : MonoBehaviour {
 
 	public float autoLoadNextLevelAfter;
 	
+	public bool autoLoadNext = false;
+	
 	void Start() {
+		if (autoLoadNext) {
 		Invoke ("LoadNextLevel", autoLoadNextLevelAfter);
+		}
 	}
 
 	public void LoadLevel(string name){
