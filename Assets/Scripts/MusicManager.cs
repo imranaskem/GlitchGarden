@@ -9,13 +9,17 @@ public class MusicManager : MonoBehaviour {
 	
 	private AudioClip currentPlaying;
 	
-	// Use this for initialization
 	void Awake () {
 		DontDestroyOnLoad(gameObject);
 	}
 	
 	void Start() {
 		music = GetComponent<AudioSource>();
+		music.volume = PlayerPrefsManager.GetMasterVolume ();
+	}
+	
+	public void ChangeVolume (float volume) {
+		music.volume = volume;
 	}
 	
 	void OnLevelWasLoaded (int level) {

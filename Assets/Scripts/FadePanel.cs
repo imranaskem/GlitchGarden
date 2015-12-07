@@ -10,16 +10,13 @@ public class FadePanel : MonoBehaviour {
 	private Color currentColour = Color.black;
 
 	void Start () {
-		fadePanel = GetComponent<Image>();	
+		fadePanel = GetComponent<Image>();
+		fadePanel.color = currentColour;
+		fadePanel.CrossFadeAlpha(0f,fadeInTime,true);
+		Invoke("Disable", fadeInTime);
 	}
 	
-	void Update () {
-		if (Time.timeSinceLevelLoad < fadeInTime) {
-			float alphaChange = Time.deltaTime / fadeInTime;
-			currentColour.a -= alphaChange;
-			fadePanel.color = currentColour;
-		} else {
-			gameObject.SetActive (false);
-		}
+	void Disable () {
+		fadePanel.enabled = false;
 	}
 }
