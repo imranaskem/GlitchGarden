@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class Attacker : MonoBehaviour {
-
+	
+	public float seenEverySeconds;
+	
 	private GameObject currentTarget;
 	private float moveSpeed;
 	private Animator anim;
@@ -16,11 +18,7 @@ public class Attacker : MonoBehaviour {
 	void Update () {
 		transform.Translate (Vector3.left * moveSpeed * Time.deltaTime);
 	}
-	
-	void OnTriggerEnter2D () {
-		//Debug.Log (name + " triggered");
-	}
-	
+			
 	public void SetSpeed (float speed) {
 		moveSpeed = speed;
 	}
