@@ -3,13 +3,15 @@ using System.Collections;
 
 public class Stone : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+//	private Animator anim;
+//	
+//	void Start () {
+//		anim = GetComponent<Animator>();
+//	}
+//
+//	void OnTriggerStay2D (Collider2D hit) {
+//		if (hit.GetComponent<Lizard>()) {
+//			anim.SetTrigger ("underAttack");
+//		}
+//	}
 }
